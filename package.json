@@ -1,0 +1,29 @@
+{
+  "name": "buseng-chronicles",
+  "private": true,
+  "version": "0.1.9",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "check": "biome check src tests",
+    "test": "bun test",
+    "android:sync": "bun run build && cap sync android",
+    "android:apk": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File Build-Android.ps1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.15",
+    "@capacitor/cli": "8.5.2",
+    "@types/bun": "^1.4.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.5.2",
+    "@capacitor/app": "8.1.2",
+    "@capacitor/core": "8.5.2",
+    "ky": "^2.1.0",
+    "zod": "^4.6.5"
+  }
+}

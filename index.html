@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#21150e" />
+  <meta name="description" content="Pakainin si Buseng! Hold, release, and throw rice onto his plate. A funny one-button arcade game for phone and PC." />
+  <title>Buseng Chronicles — Pakainin si Buseng</title>
+  <link rel="icon" href="/assets/icon-v018.png" type="image/png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="preload" href="/assets/art/restaurant-v018.webp" as="image" />
+</head>
+<body>
+  <main>
+    <section id="stage" class="stage" data-phase="loading" aria-label="Buseng Chronicles game">
+      <canvas id="game" width="480" height="800" aria-label="Rice Man throws rice onto Buseng's plate. Hold to charge, release to throw. One miss ends the run."></canvas>
+      <div class="vignette" aria-hidden="true"></div>
+      <header id="brand" class="brand">
+        <h1><span>BUSENG</span><small>CHRONICLES</small></h1>
+      </header>
+      <div class="tools">
+        <button id="mute" class="tool" type="button" aria-label="Mute sound" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 3c3 2 3 6 0 8m3-11c5 4 5 10 0 14" /></svg>
+        </button>
+        <button id="pause" class="tool" type="button" aria-label="Pause game" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" /></svg>
+        </button>
+      </div>
+      <div id="hud" class="hud" hidden>
+        <div class="plaque"><span>SCORE</span><strong id="score">0</strong></div>
+        <div class="plaque best"><span>BEST</span><strong id="best">0</strong></div>
+      </div>
+      <div id="feedback" class="feedback" aria-hidden="true"></div>
+      <div id="menu" class="menu-panel" hidden>
+        <p class="how">Hold <span>→</span> Bitaw <span>→</span> Kanin na</p>
+        <button id="start" class="comic-button" type="button">PLAY <span>▶</span></button>
+        <button id="settings" class="secondary menu-settings" type="button">SETTINGS</button>
+      </div>
+      <p id="banter" class="banter" hidden></p>
+      <div id="play-controls" class="play-controls" hidden>
+        <button id="throw" class="throw-button" type="button" aria-label="Hold to charge, release to throw rice">
+          <span id="throw-label">HOLD • RELEASE</span>
+          <span class="meter"><span id="charge-fill" class="charge-fill"></span><span id="catch-band" class="catch-band"></span><span id="perfect-band" class="perfect-band"></span><span id="charge-marker" class="charge-marker"></span></span>
+        </button>
+      </div>
+      <div id="over" class="over-panel" hidden>
+        <h2>GALIT NA SI<br /><span>BUSENG!</span></h2>
+        <div class="over-actions">
+          <p id="verdict" class="verdict plaque">Walang kanen?!</p>
+          <div class="result-row"><div class="plaque">SCORE<strong id="final-score">0</strong></div><div class="plaque">BEST<strong id="final-best">0</strong></div></div>
+          <button id="retry" class="comic-button" type="button">ISA PA! <span>↻</span></button>
+          <button id="back" class="secondary" type="button">MENU</button>
+        </div>
+      </div>
+      <div id="paused" class="pause-panel" hidden>
+        <h2 class="plaque">TEKA LANG!</h2>
+        <p class="plaque">Pahinga muna ang kanin.</p>
+        <button id="resume" class="comic-button" type="button">Continue Playing</button>
+        <button id="paused-menu" class="secondary" type="button">MENU</button>
+      </div>
+      <div id="loading" class="loading"><p class="plaque" id="loading-message">Hinahanda ang kanin…</p></div>
+      <p id="live" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+    </section>
+    <p class="desktop-hint">Hold mouse / touch / <kbd>SPACE</kbd> · Release to throw · <kbd>ESC</kbd> to pause</p>
+  </main>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

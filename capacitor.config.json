@@ -1,0 +1,14 @@
+{
+  "appId": "com.busengchronicles.game",
+  "appName": "Buseng Chronicles",
+  "webDir": "dist",
+  "backgroundColor": "#21150e",
+  "android": {
+    "backgroundColor": "#21150e"
+  },
+  "plugins": {
+    "SystemBars": {
+      "hidden": true
+    }
+  }
+}

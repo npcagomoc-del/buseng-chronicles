@@ -1,0 +1,209 @@
+@font-face {
+  font-family: Bangers;
+  src: url("/assets/bangers.ttf") format("truetype");
+  font-display: swap;
+}
+:root {
+  --ink: #211006;
+  --ink-soft: #5e3218;
+  --night-wood: #21150e;
+  --wood-dark: #6c3618;
+  --wood: #ae6328;
+  --wood-light: #e5a04c;
+  --cream: #fff0c5;
+  --rice: #fffced;
+  --gold-light: #fff16c;
+  --gold: #ffcf1e;
+  --gold-deep: #f48b08;
+  --leaf-light: #a3e630;
+  --leaf: #4dab12;
+  --leaf-dark: #174f08;
+  --heat: #f24a17;
+  --sweat: #87dafa;
+  --focus: #fff;
+  --play-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: var(--cream);
+  background: var(--night-wood);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: radial-gradient(ellipse at 50% 40%, var(--wood-dark), var(--night-wood) 70%);
+}
+main {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  min-height: 100dvh;
+  padding: calc(12px + env(safe-area-inset-top, 0px)) calc(12px + env(safe-area-inset-right, 0px))
+    calc(12px + env(safe-area-inset-bottom, 0px)) calc(12px + env(safe-area-inset-left, 0px));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+main::before {
+  content: "";
+  position: absolute;
+  inset: -28px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(#2110068a, #211006a8),
+    url("/assets/art/restaurant.webp") center / cover;
+  filter: blur(12px);
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: none;
+}
+button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--ink);
+}
+button:disabled {
+  cursor: wait;
+}
+[hidden][hidden] {
+  display: none;
+}
+.stage {
+  position: relative;
+  width: min(480px, calc((var(--play-height) - 60px) * 0.6), calc(100vw - 24px));
+  aspect-ratio: 3 / 5;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--wood);
+  border: 4px solid var(--wood-dark);
+  box-shadow:
+    0 0 0 2px var(--wood-light),
+    0 16px 48px var(--ink);
+  container-type: inline-size;
+  touch-action: none;
+}
+canvas,
+.vignette {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.vignette {
+  pointer-events: none;
+  background: linear-gradient(0deg, #21100680, transparent 26%, transparent 70%, #21100620);
+}
+.brand {
+  position: absolute;
+  top: 4%;
+  left: 5%;
+  width: 90%;
+  text-align: center;
+  pointer-events: none;
+}
+h1 {
+  margin: 0;
+  font-family: Bangers, Impact, sans-serif;
+  font-weight: 400;
+  line-height: 0.84;
+  transform: rotate(-3deg);
+  filter: drop-shadow(0 4px 0 var(--ink));
+}
+h1 span {
+  display: block;
+  font-size: 23cqw;
+  letter-spacing: 1px;
+  color: var(--gold);
+  -webkit-text-stroke: 2px var(--ink);
+  text-shadow:
+    2px 3px 0 var(--gold-deep),
+    -1px -2px 0 var(--gold-light);
+}
+h1 small {
+  display: block;
+  margin-top: 8px;
+  font-size: 9cqw;
+  color: var(--cream);
+  -webkit-text-stroke: 1px var(--ink);
+  letter-spacing: 2px;
+}
+.brand::before,
+.brand::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 37%;
+  height: 50%;
+  top: 10%;
+  border: 3px solid var(--leaf-dark);
+  background:
+    repeating-linear-gradient(25deg, transparent 0 8px, #174f0830 9px 10px),
+    linear-gradient(135deg, var(--leaf), var(--leaf-dark));
+  border-radius: 100% 0 100% 0;
+}
+.brand::before {
+  left: 0;
+  transform: rotate(-25deg);
+}
+.brand::after {
+  right: 0;
+  transform: rotate(65deg);
+}
+.plaque {
+  color: var(--ink);
+  background: linear-gradient(110deg, var(--rice), var(--cream));
+  border: 3px solid var(--wood-dark);
+  border-radius: 12px;
+  box-shadow:
+    inset 0 2px 0 var(--rice),
+    0 4px 0 var(--ink-soft);
+  font-weight: 800;
+  text-align: center;
+}
+.subtitle {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: max(14px, 4.2cqw);
+  margin: 16px 0 0;
+  transform: rotate(-2deg);
+}
+.tools {
+  position: absolute;
+  right: 3%;
+  top: 2%;
+  display: flex;
+  gap: 8px;
+  z-index: 6;
+}
+.tool {
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: var(--cream);
+  color: var(--ink);
+  box-shadow: 0 3px 0 var(--wood-dark);
+}
+.tool svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.tool[aria-pressed="true"] svg {
+  opacity: 0.45;
+}
+.tool[aria-pressed="true"] {
+  background: var(--wood-light);
+}

@@ -1,0 +1,10 @@
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.png binary
+*.jpg binary
+*.webp binary
+*.mp3 binary
+*.ttf binary
+*.jar binary
+public/assets/OFL-Bangers.txt whitespace=-blank-at-eol

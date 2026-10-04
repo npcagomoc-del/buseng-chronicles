@@ -1,0 +1,177 @@
+.hud {
+  position: absolute;
+  display: flex;
+  gap: 16px;
+  top: 17%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.hud .plaque {
+  min-width: 92px;
+  padding: 8px 16px;
+}
+.hud span {
+  display: block;
+  font-family: Bangers, Impact, sans-serif;
+  font-size: max(14px, 4.2cqw);
+}
+.hud strong {
+  display: block;
+  font-family: Bangers, Impact, sans-serif;
+  font-weight: 400;
+  font-size: 10cqw;
+  line-height: 1;
+}
+.hud .best {
+  min-width: 72px;
+}
+.hud .best strong {
+  font-size: 6.5cqw;
+}
+.menu-panel {
+  position: absolute;
+  bottom: 5%;
+  width: 88%;
+  left: 6%;
+  text-align: center;
+}
+.how {
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: max(14px, 3.2cqw);
+  font-weight: 900;
+  color: var(--cream);
+  background: var(--leaf-dark);
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+}
+.how span {
+  color: var(--gold);
+  margin: 0 4px;
+}
+.comic-button {
+  width: 100%;
+  min-height: 56px;
+  padding: 12px 20px;
+  border: 4px solid var(--ink);
+  border-radius: 18px;
+  background: linear-gradient(var(--gold-light), var(--gold) 42%, var(--gold-deep));
+  color: var(--ink);
+  box-shadow:
+    inset 0 3px 0 var(--cream),
+    inset 0 -3px 0 var(--wood-light),
+    0 6px 0 var(--wood-dark),
+    0 9px 0 var(--ink);
+  font-family: Bangers, Impact, sans-serif;
+  font-size: 9cqw;
+  letter-spacing: 1px;
+  transition:
+    transform 120ms,
+    filter 120ms;
+}
+.comic-button span {
+  margin-left: 12px;
+}
+.comic-button:active,
+.secondary:active,
+.tool:active {
+  transform: scale(0.96);
+}
+.play-controls {
+  position: absolute;
+  bottom: 3%;
+  left: 6%;
+  width: 88%;
+  text-align: center;
+}
+.throw-button {
+  width: 100%;
+  padding: 8px 12px 12px;
+  min-height: 64px;
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  background: linear-gradient(var(--wood-light), var(--wood));
+  box-shadow: 0 5px 0 var(--wood-dark);
+}
+.throw-button > span:first-child {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-family: Bangers, Impact, sans-serif;
+  font-size: max(18px, 5cqw);
+  letter-spacing: 1px;
+}
+.meter {
+  display: block;
+  width: 100%;
+  height: 24px;
+  position: relative;
+  border-radius: 8px;
+  border: 2px solid var(--ink);
+  overflow: hidden;
+  background: var(--ink-soft);
+}
+.charge-fill {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 9%, #21100640 9% 10%),
+    linear-gradient(90deg, var(--leaf-light), var(--gold) 55%, var(--heat));
+  clip-path: inset(0 100% 0 0);
+}
+.stage[data-perfect-aim="true"] .charge-fill {
+  background: linear-gradient(90deg, #88ff54, #18d447);
+  filter: drop-shadow(0 0 6px #5aff66);
+}
+.charge-marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--rice);
+  border-left: 1px solid var(--ink);
+  transform: translateX(-4px);
+}
+.catch-band,
+.perfect-band {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+.catch-band {
+  background: #ffcf1e50;
+  border-inline: 2px solid var(--gold-light);
+}
+.perfect-band {
+  background: #fffced70;
+}
+.feedback {
+  position: absolute;
+  top: 34%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: Bangers, Impact, sans-serif;
+  font-size: 8cqw;
+  color: var(--gold-light);
+  -webkit-text-stroke: 1px var(--ink);
+  pointer-events: none;
+}
+
+.banter {
+  position: absolute;
+  top: 11%;
+  left: 5%;
+  width: 90%;
+  margin: 0;
+  text-align: center;
+  color: var(--gold-light);
+  font-family: Bangers, Impact, sans-serif;
+  font-size: max(14px, 4.5cqw);
+  letter-spacing: 1px;
+  text-shadow:
+    1px 2px 0 var(--ink),
+    -1px -1px 0 var(--ink);
+  pointer-events: none;
+}

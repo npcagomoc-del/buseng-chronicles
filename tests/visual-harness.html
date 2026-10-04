@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Buseng V019 visual QA</title>
+    <style>
+      @font-face { font-family: Bangers; src: url('/assets/bangers.ttf'); }
+      body { margin: 0; background: #21150e; color: #fff0c5; display: grid; justify-items: center; font: 14px Trebuchet MS, sans-serif; }
+      #stage { width: min(480px, 100vw); aspect-ratio: 480 / 800; }
+      canvas { display: block; width: 100%; height: 100%; }
+      nav { display: flex; gap: 4px; flex-wrap: wrap; max-width: 480px; padding: 8px; }
+      button { min-height: 44px; padding: 8px; color: #211006; background: #fff0c5; border: 2px solid #e5a04c; border-radius: 6px; cursor: pointer; }
+      button[aria-pressed="true"] { background: #ffcf1e; }
+      button:focus-visible { outline: 3px solid white; outline-offset: 2px; }
+      output { display: block; padding: 8px; max-width: 464px; }
+    </style>
+  </head>
+  <body>
+    <nav aria-label="Animation review controls">
+      <button type="button" data-score="0">Score 0</button><button type="button" data-score="20">Score 20</button><button type="button" data-score="40">Score 40</button><button type="button" data-score="80">Score 80</button>
+      <button type="button" data-mode="walk">Walk</button><button type="button" data-mode="teleport">Teleport</button><button type="button" data-mode="tongue">Tongue</button><button type="button" data-mode="charge">Charge</button>
+      <button type="button" data-mode="flame-ready">Flaming ready</button><button type="button" data-mode="flame-charge">Flaming charge</button><button type="button" data-mode="flame-flight">Flame throw</button><button type="button" data-mode="flight">Throw</button><button type="button" data-mode="perfect">Perfect</button>
+      <button type="button" data-mode="face">Face hit</button><button type="button" data-mode="over">Defeat</button>
+      <button type="button" data-mode="slap">Perfect slap</button><button type="button" data-mode="feed">Flaming feed</button><button type="button" data-mode="reply">Tahp reply</button><button type="button" id="character">Character: Rice Man</button>
+      <button type="button" data-time="0">Time 0</button><button type="button" data-time="0.12">Time 0.12</button><button type="button" data-time="0.25">Time 0.25</button><button type="button" data-time="0.42">Time 0.42</button><button type="button" data-time="0.36">Time 0.36</button><button type="button" data-time="0.48">Time 0.48</button><button type="button" data-time="0.85">Time 0.85</button><button type="button" data-time="0.95">Time 0.95</button><button type="button" data-time="0.55">Time 0.55</button><button type="button" data-time="0.15">Time 0.15</button><button type="button" data-time="0.3">Time 0.30</button><button type="button" data-time="0.43">Time 0.43</button><button type="button" data-time="0.6">Time 0.60</button><button type="button" data-time="0.9">Time 0.90</button><button type="button" data-time="1.2">Time 1.20</button>
+      <button type="button" data-mode="shed1">Rice shed 1</button><button type="button" data-mode="shed2">Rice shed 2</button><button type="button" data-mode="shed3">Rice shed 3</button><button type="button" data-mode="clear">Rice clear</button>
+      <button type="button" id="tall" aria-pressed="false">Tall arena 1180</button><button type="button" id="reduced" aria-pressed="false">Reduced motion</button>
+      <button type="button" id="step">Next frame +0.08s</button><button type="button" id="animate">Animate / stop</button><button type="button" id="reset">Reset frame</button>
+    </nav>
+    <output id="status" aria-live="polite"></output>
+    <div id="stage"><canvas id="game" aria-label="Buseng production renderer animation test"></canvas></div>
+    <script type="module" src="/tests/visual-harness.ts"></script>
+  </body>
+</html>

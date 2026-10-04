@@ -1,0 +1,274 @@
+.startup-intro {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 20px 24px;
+  overflow: hidden;
+  color: var(--cream);
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    var(--leaf) 0,
+    var(--leaf-dark) 49%,
+    var(--night-wood) 95%
+  );
+}
+.startup-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.15;
+  background: repeating-conic-gradient(
+    from 0deg at 50% 48%,
+    transparent 0deg 12deg,
+    var(--gold-light) 12deg 14deg
+  );
+}
+.startup-intro > * {
+  position: relative;
+}
+.intro-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.startup-intro button {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 2px solid var(--cream);
+  border-radius: 8px;
+  color: var(--cream);
+  background: var(--leaf-dark);
+  font:
+    700 14px "Trebuchet MS",
+    sans-serif;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.startup-intro button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px var(--ink);
+}
+.startup-intro button:active {
+  transform: translateY(2px);
+}
+.startup-intro .intro-mute {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+}
+.intro-title {
+  margin: auto 0 4px;
+  font:
+    400 clamp(44px, 16cqw, 76px) / 0.9 Bangers,
+    Impact,
+    sans-serif;
+  color: var(--gold);
+  text-align: center;
+  letter-spacing: 2px;
+  -webkit-text-stroke: 1px var(--ink);
+  text-shadow: 3px 5px 0 var(--ink);
+  transform: rotate(-3deg);
+}
+.intro-title span {
+  display: block;
+  margin-top: 8px;
+  color: var(--rice);
+  font-size: 0.53em;
+  letter-spacing: 4px;
+}
+.startup-intro .intro-portrait {
+  position: relative;
+  inset: auto;
+  display: block;
+  flex: 0 1 auto;
+  width: min(100%, 360px);
+  height: auto;
+  max-height: 43%;
+  min-height: 0;
+  object-fit: contain;
+  filter: drop-shadow(4px 8px 0 #21100670);
+}
+.intro-caption {
+  margin: 0 0 16px;
+  padding: 12px 20px;
+  max-width: 100%;
+  border: 3px solid var(--ink);
+  border-radius: 24px 24px 24px 4px;
+  color: var(--ink);
+  background: var(--cream);
+  box-shadow: 4px 5px 0 var(--ink);
+  font:
+    400 clamp(22px, 7cqw, 32px) / 1.1 Bangers,
+    Impact,
+    sans-serif;
+  text-align: center;
+}
+.intro-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+  margin-top: auto;
+}
+.startup-intro .intro-enter {
+  width: min(100%, 300px);
+  min-height: 56px;
+  border: 3px solid var(--ink);
+  color: var(--ink);
+  background: linear-gradient(var(--gold-light), var(--gold));
+  box-shadow:
+    0 5px 0 var(--gold-deep),
+    0 8px 0 var(--ink);
+  font:
+    400 32px Bangers,
+    Impact,
+    sans-serif;
+  letter-spacing: 2px;
+}
+.is-playing .intro-portrait {
+  animation: intro-arrive 220ms ease-out both;
+}
+.is-credit {
+  color: var(--ink);
+  background: var(--cream);
+}
+.is-credit::before {
+  opacity: 0.07;
+  background: radial-gradient(var(--ink) 1px, transparent 1px) 0 0 / 8px 8px;
+}
+.is-credit .intro-title {
+  order: 2;
+  margin: 4px 0 auto;
+  color: var(--leaf-dark);
+  font-size: clamp(64px, 24cqw, 112px);
+  text-shadow: 3px 4px 0 var(--gold);
+  transform: none;
+}
+.is-credit .intro-title span {
+  color: var(--ink);
+  margin: 0 0 12px;
+  font:
+    700 16px "Trebuchet MS",
+    sans-serif;
+  letter-spacing: 2px;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+.is-credit .intro-portrait {
+  margin-top: auto;
+  max-height: 42%;
+  animation: none;
+}
+.is-credit .intro-caption {
+  order: 3;
+  margin: 20px 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.is-credit .intro-bottom {
+  order: 4;
+  margin-top: 0;
+}
+@keyframes intro-arrive {
+  from {
+    opacity: 0.4;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.startup-intro[data-reduced="true"] .intro-portrait {
+  animation: none;
+}
+.startup-intro[data-reduced="true"] button:active {
+  transform: none;
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  .startup-intro {
+    padding: 8px 16px;
+  }
+  .intro-title {
+    font-size: 40px;
+  }
+  .startup-intro .intro-portrait {
+    max-height: 30%;
+  }
+  .intro-caption {
+    font-size: 20px;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+  }
+  .intro-bottom {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .startup-intro .intro-enter {
+    min-height: 44px;
+    width: 50%;
+    font-size: 24px;
+  }
+  .is-credit .intro-title {
+    font-size: 56px;
+  }
+  .startup-intro.is-credit {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: 44px minmax(0, 1fr) 32px 48px;
+    gap: 4px 16px;
+  }
+  .is-credit .intro-top {
+    grid-column: 1 / -1;
+  }
+  .is-credit .intro-portrait {
+    grid-column: 1;
+    grid-row: 2 / 5;
+    align-self: center;
+    max-height: 100%;
+    margin: 0;
+  }
+  .is-credit .intro-title {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    margin: 0;
+  }
+  .is-credit .intro-caption {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: center;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+  }
+  .is-credit .intro-bottom {
+    grid-column: 2;
+    grid-row: 4;
+  }
+}
+@media (max-height: 440px) and (orientation: landscape) {
+  .startup-intro {
+    right: -244px;
+    border-radius: 12px;
+  }
+  .stage:has(.startup-intro) + .desktop-hint {
+    visibility: hidden;
+  }
+}
