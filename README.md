@@ -3,7 +3,7 @@
 **Wala nang kanen, Buseng!?** A funny, one-button Filipino meme-inspired rice-throwing game for Android and PC. Developed by **NPC**.
 
 [![Download Android APK](https://img.shields.io/badge/Download-Android%20APK-176b32?style=for-the-badge&logo=android)](https://github.com/npcagomoc-del/buseng-chronicles/releases/download/v1.0.0/Buseng-Chronicles-v1.0.0.apk)
-[![APK downloads](https://img.shields.io/github/downloads/npcagomoc-del/buseng-chronicles/v1.0.0/Buseng-Chronicles-v1.0.0.apk?label=APK%20downloads&style=for-the-badge&color=e8ae22)](https://github.com/npcagomoc-del/buseng-chronicles/releases/tag/v1.0.0)
+[![APK downloads](https://img.shields.io/github/downloads/npcagomoc-del/buseng-chronicles/v1.0.0/Buseng-Chronicles-v1.0.0.apk?label=APK%20downloads&displayAssetName=false&style=for-the-badge&color=e8ae22)](https://github.com/npcagomoc-del/buseng-chronicles/releases/tag/v1.0.0)
 
 The counter uses GitHub release-asset downloads, including repeat and verification downloads. It is **not unique players, installs or button clicks**. The badge is cached; the exact count is the APK asset's `download_count` in the [public release API](https://api.github.com/repos/npcagomoc-del/buseng-chronicles/releases/tags/v1.0.0). No in-game analytics service is added.
 
